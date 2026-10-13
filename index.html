@@ -727,8 +727,11 @@ setTimeout(()=>URL.revokeObjectURL(url),1000);
 
   if(enter && intro){
     enter.addEventListener('click',()=>{
-      intro.classList.add('px-hide');
-      window.setTimeout(()=>intro.remove(),700);
+      if(video) video.pause();
+      intro.style.setProperty('display','none','important');
+      intro.remove();
+      document.body.style.overflow='auto';
+      window.scrollTo(0,0);
     });
   }
 })();
