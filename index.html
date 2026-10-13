@@ -396,15 +396,40 @@ setTimeout(()=>URL.revokeObjectURL(url),1000);
 </div>
 <script>
 (function(){
-  var intro=document.getElementById('px-intro');
-  var enter=document.getElementById('px-enter');
-  var video=document.getElementById('px-intro-video');
-  var sound=document.getElementById('px-sound');
-  if(sound && video){sound.addEventListener('click',function(){video.muted=false;video.volume=1;video.play().then(function(){sound.textContent='🔊 SOUND ON';}).catch(function(){sound.textContent='TAP AGAIN TO PLAY SOUND';});});}
+  const intro=document.getElementById('px-intro');
+  const video=document.getElementById('px-intro-video');
+  const enter=document.getElementById('px-enter');
+  const sound=document.getElementById('px-sound');
+
+  if(video){
+    video.muted=true;
+    video.playsInline=true;
+    video.loop=false;
+    const playVideo=()=>video.play().catch(()=>{});
+    video.addEventListener('canplay',playVideo,{once:true});
+    window.addEventListener('pageshow',playVideo,{once:true});
+    playVideo();
+  }
+
+  if(sound && video){
+    sound.addEventListener('click',async()=>{
+      try{
+        video.muted=false;
+        video.volume=1;
+        await video.play();
+        sound.textContent='🔊 SOUND ON';
+      }catch(e){
+        video.muted=true;
+        try{await video.play();}catch(_){}
+        sound.textContent='TAP AGAIN TO ENABLE SOUND';
+      }
+    });
+  }
+
   if(enter && intro){
-    enter.addEventListener('click',function(){
+    enter.addEventListener('click',()=>{
       intro.classList.add('px-hide');
-      window.setTimeout(function(){intro.remove();},700);
+      window.setTimeout(()=>intro.remove(),700);
     });
   }
 })();
