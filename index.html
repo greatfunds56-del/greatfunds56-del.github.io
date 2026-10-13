@@ -277,6 +277,66 @@ aria-expanded="false" aria-controls="site-menu">☰</button>
 <a href="shop.html">SHOP</a></nav>
 
 
+
+
+<main id="home">
+
+<section class="hero">
+<h1>YOUR DEVICE.<br><span>YOUR SENSITIVITY.</span></h1>
+<p>Enter your phone details and playing setup to generate a personalized starting profile.</p>
+</section>
+<section class="panel" id="setup">
+<h2 class="section-title">✦ DEVICE CONFIGURATION</h2>
+<form id="form">
+<label for="brand">PHONE BRAND</label>
+<select id="brand" required>
+<option value="">Select brand</option>
+<option>Samsung</option><option>TECNO</option><option>Infinix</option>
+<option>Redmi</option><option>Xiaomi</option><option>itel</option>
+<option>iPhone</option><option>OPPO</option><option>vivo</option>
+<option>Realme</option><option>Huawei</option><option>Other</option>
+</select>
+<label for="model">PHONE MODEL</label>
+<input id="model" placeholder="e.g. TECNO Spark 10" maxlength="60" required>
+<label for="ram">RAM SIZE</label>
+<select id="ram" required>
+<option value="">Choose RAM</option>
+<option value="2">2 GB</option><option value="3">3 GB</option>
+<option value="4">4 GB</option><option value="6">6 GB</option>
+<option value="8">8 GB</option><option value="12">12 GB</option>
+<option value="16">16 GB or more</option>
+</select>
+<label for="fingers">NUMBER OF FINGERS</label>
+<select id="fingers" required>
+<option value="">Choose finger setup</option>
+<option value="2">2 fingers</option><option value="3">3 fingers</option>
+<option value="4">4 fingers</option><option value="5">5 fingers</option>
+<option value="6">6 fingers</option>
+</select>
+<label for="style">PLAYING STYLE</label>
+<select id="style">
+<option value="balanced">Balanced</option>
+<option value="rush">Rusher / Fast drag</option>
+<option value="precision">Precision / Long range</option>
+</select>
+<button type="submit">⚡ GENERATE MY SENSITIVITY</button>
+<p class="hint">Settings are suggested starting values. Actual feel depends on your game, FPS, screen and personal control.</p>
+</form>
+</section>
+<section class="panel" id="results">
+<div class="results-head">
+<h2>✦ YOUR SENSITIVITY</h2>
+<button class="small-btn" type="button" id="reset">RESET</button>
+</div>
+<p id="empty" class="empty">Your personalized settings go show here after you submit your device details.</p>
+<div id="output" class="hidden">
+<div class="grid" id="grid"></div>
+<button type="button" id="copy">COPY SETTINGS</button>
+<button type="button" id="download">SAVE AS TXT</button>
+<p class="hint" id="summary"></p>
+</div>
+</section>
+
 <section id="px-feature-hub" aria-label="Cyber feature hub">
 <style>
 #px-feature-hub{margin:24px auto;padding:22px;max-width:1100px;
@@ -313,7 +373,7 @@ border-color:#c7a2ff;box-shadow:0 0 15px #8b5cf655}
 </div>
 </section>
 
-<main id="home">
+
 
 <section id="px-boost-dashboard" aria-label="Gaming booster dashboard">
  <div class="boost-banner">
@@ -440,61 +500,6 @@ border-color:#c7a2ff;box-shadow:0 0 15px #8b5cf655}
  <p class="hint">Note: This dashboard provides shortcuts and a checklist. It does not directly change FPS, RAM, or phone hardware performance.</p>
 </section>
 
-<section class="hero">
-<h1>YOUR DEVICE.<br><span>YOUR SENSITIVITY.</span></h1>
-<p>Enter your phone details and playing setup to generate a personalized starting profile.</p>
-</section>
-<section class="panel" id="setup">
-<h2 class="section-title">✦ DEVICE CONFIGURATION</h2>
-<form id="form">
-<label for="brand">PHONE BRAND</label>
-<select id="brand" required>
-<option value="">Select brand</option>
-<option>Samsung</option><option>TECNO</option><option>Infinix</option>
-<option>Redmi</option><option>Xiaomi</option><option>itel</option>
-<option>iPhone</option><option>OPPO</option><option>vivo</option>
-<option>Realme</option><option>Huawei</option><option>Other</option>
-</select>
-<label for="model">PHONE MODEL</label>
-<input id="model" placeholder="e.g. TECNO Spark 10" maxlength="60" required>
-<label for="ram">RAM SIZE</label>
-<select id="ram" required>
-<option value="">Choose RAM</option>
-<option value="2">2 GB</option><option value="3">3 GB</option>
-<option value="4">4 GB</option><option value="6">6 GB</option>
-<option value="8">8 GB</option><option value="12">12 GB</option>
-<option value="16">16 GB or more</option>
-</select>
-<label for="fingers">NUMBER OF FINGERS</label>
-<select id="fingers" required>
-<option value="">Choose finger setup</option>
-<option value="2">2 fingers</option><option value="3">3 fingers</option>
-<option value="4">4 fingers</option><option value="5">5 fingers</option>
-<option value="6">6 fingers</option>
-</select>
-<label for="style">PLAYING STYLE</label>
-<select id="style">
-<option value="balanced">Balanced</option>
-<option value="rush">Rusher / Fast drag</option>
-<option value="precision">Precision / Long range</option>
-</select>
-<button type="submit">⚡ GENERATE MY SENSITIVITY</button>
-<p class="hint">Settings are suggested starting values. Actual feel depends on your game, FPS, screen and personal control.</p>
-</form>
-</section>
-<section class="panel" id="results">
-<div class="results-head">
-<h2>✦ YOUR SENSITIVITY</h2>
-<button class="small-btn" type="button" id="reset">RESET</button>
-</div>
-<p id="empty" class="empty">Your personalized settings go show here after you submit your device details.</p>
-<div id="output" class="hidden">
-<div class="grid" id="grid"></div>
-<button type="button" id="copy">COPY SETTINGS</button>
-<button type="button" id="download">SAVE AS TXT</button>
-<p class="hint" id="summary"></p>
-</div>
-</section>
 </main>
 <footer>PYTHON XIT SENZI<br><br>PLAY SMART • AIM BETTER</footer>
 </div>
