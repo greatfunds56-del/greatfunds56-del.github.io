@@ -212,6 +212,78 @@ setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 </script>
 
+<!-- PYTHON XIT SENZI: NEW FEATURES -->
+<style>
+#px-smart-features{color:#f8f4ff;margin:28px 0;font-family:inherit}
+#px-smart-features .px-card{background:linear-gradient(145deg,#21102f,#10091a);border:1px solid #7436a0;border-radius:16px;padding:18px;margin:14px 0;box-shadow:0 0 22px #a855f71a}
+#px-smart-features h2{color:#e879f9;margin:0 0 10px;font-size:22px}
+#px-smart-features h3{color:#e9b5ff;margin:0 0 8px}
+#px-smart-features p,#px-smart-features li{color:#cdbbdc;line-height:1.65}
+#px-smart-features label{display:block;color:#e9d5ff;margin:13px 0 6px;font-weight:700}
+#px-smart-features select,#px-smart-features input{box-sizing:border-box;width:100%;padding:12px;border-radius:10px;border:1px solid #75449a;background:#130b1e;color:#fff}
+#px-smart-features button{width:100%;margin-top:16px;padding:13px;border:0;border-radius:10px;background:linear-gradient(100deg,#7e22ce,#c026d3);color:white;font-weight:900}
+#px-smart-features .px-result{margin-top:14px;padding:14px;border-radius:12px;background:#0b0712;border:1px solid #a855f7;line-height:1.7}
+#px-smart-features .px-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+#px-smart-features .px-tag{font-size:11px;letter-spacing:2px;color:#d8b4fe;font-weight:900}
+</style>
+<section id="px-smart-features">
+  <div class="px-card">
+    <div class="px-tag">✦ PERSONALIZED STARTING POINT</div>
+    <h2>SMART SENSITIVITY FINDER</h2>
+    <p>Choose your device setup and play style to get a starting sensitivity profile. Test and adjust it in training mode for your own touch response.</p>
+    <label for="px-ram">Phone RAM</label>
+    <select id="px-ram"><option value="2">2 GB</option><option value="3">3–4 GB</option><option value="6" selected>6 GB</option><option value="8">8 GB or more</option></select>
+    <label for="px-fingers">How many fingers do you play with?</label>
+    <select id="px-fingers"><option value="2">2 fingers</option><option value="3">3 fingers</option><option value="4" selected>4 fingers</option><option value="5">5 or more fingers</option></select>
+    <label for="px-style">Your play style</label>
+    <select id="px-style"><option value="balanced">Balanced</option><option value="drag">Drag headshots</option><option value="rush">Rush / close combat</option><option value="scope">Long range / scope</option></select>
+    <button type="button" id="px-find">⚡ FIND MY STARTING SETTINGS</button>
+    <div class="px-result" id="px-finder-result" aria-live="polite">Your suggested settings go show here after you tap the button.</div>
+  </div>
+
+  <h2>🎮 GAMING TIPS & GUIDES</h2>
+  <div class="px-grid">
+    <article class="px-card"><h3>🎯 Drag Headshots</h3><p>Keep your crosshair around upper-chest level. Use a short, controlled upward drag instead of pulling too far past the target.</p></article>
+    <article class="px-card"><h3>⚙️ Find Your Sensitivity</h3><p>Change one setting at a time. Test several short rounds before deciding whether to increase or reduce sensitivity.</p></article>
+    <article class="px-card"><h3>📱 Reduce Lag</h3><p>Close heavy background apps, keep enough free storage, and choose stable graphics settings your phone can maintain smoothly.</p></article>
+    <article class="px-card"><h3>🖐️ Improve Control</h3><p>Choose a comfortable button layout and practise the same movement consistently. More fingers can help, but comfort matters most.</p></article>
+  </div>
+
+  <h2 style="margin-top:26px">🚀 LATEST UPDATES</h2>
+  <article class="px-card"><div class="px-tag">NEW WEBSITE FEATURE</div><h3>Smart Sensitivity Finder</h3><p>Use the new finder to get a suggested starting profile based on your play style and control setup.</p></article>
+  <article class="px-card"><div class="px-tag">QUICK REMINDER</div><h3>Test Before You Save</h3><p>Every phone responds differently. Treat suggested values as a starting point, then fine-tune them in training mode.</p></article>
+</section>
+<script>
+(function(){
+  const button=document.getElementById('px-find');
+  if(!button || button.dataset.ready) return;
+  button.dataset.ready='1';
+  button.addEventListener('click',function(){
+    const ram=Number(document.getElementById('px-ram').value);
+    const fingers=Number(document.getElementById('px-fingers').value);
+    const style=document.getElementById('px-style').value;
+    let base=90;
+    if(ram<=2) base-=5;
+    if(ram>=8) base+=3;
+    if(fingers>=4) base+=4;
+    let values={general:base,red:base-4,two:base-12,four:base-20,sniper:base-34,free:base+8};
+    if(style==='drag'){values.general+=8;values.red+=8;values.two+=5;}
+    if(style==='rush'){values.general+=6;values.red+=5;values.free+=4;}
+    if(style==='scope'){values.two-=5;values.four-=4;values.sniper-=6;}
+    Object.keys(values).forEach(k=>values[k]=Math.max(0,Math.min(200,values[k])));
+    document.getElementById('px-finder-result').innerHTML=
+      '<strong style="color:#e879f9">YOUR STARTING PROFILE</strong><br>'+
+      'General: <strong>'+values.general+'</strong><br>'+
+      'Red Dot: <strong>'+values.red+'</strong><br>'+
+      '2x Scope: <strong>'+values.two+'</strong><br>'+
+      '4x Scope: <strong>'+values.four+'</strong><br>'+
+      'Sniper Scope: <strong>'+values.sniper+'</strong><br>'+
+      'Free Look: <strong>'+values.free+'</strong><hr>'+
+      '<span style="color:#cdbbdc">These are experimental starting values, not guaranteed perfect settings. Test them in-game and adjust to your device.</span>';
+  });
+})();
+</script>
+<!-- END PYTHON XIT SENZI NEW FEATURES -->
 <section id="downloads" style="margin:28px 0;padding:18px;border:1px solid #542477;border-radius:16px;background:linear-gradient(145deg,#1b1029,#0d0815);box-shadow:0 0 22px #a855f722">
   <h2 style="margin:0 0 8px;color:#dc66ff;font-size:22px">DOWNLOADS</h2>
   <p style="color:#b7a7c7;margin:0 0 16px">Get your headshot files below.</p>
