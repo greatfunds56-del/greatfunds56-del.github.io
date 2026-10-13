@@ -242,23 +242,7 @@ footer{text-align:center;color:#8d789f;font-size:10px;letter-spacing:2px;padding
 @media(prefers-reduced-motion:reduce){#px-boost-dashboard .boost-card{transition:none}}
 </style>
 
-<!-- PX_INTRO_ENTRY -->
-<script>
-(function(){
-  try {
-    if (new URLSearchParams(location.search).get('intro') === 'done') {
-      try { sessionStorage.setItem('pxIntroSeen', '1'); } catch(e) {}
-      history.replaceState(null, '', location.pathname);
-      return;
-    }
-    if (sessionStorage.getItem('pxIntroSeen') === '1') return;
-    var path = location.pathname;
-    if (path === '/' || path.endsWith('/index.html')) {
-      location.replace(new URL('intro.html', location.href).href);
-    }
-  } catch (e) {}
-})();
-</script>
+
 </head>
 <body>
 <div class="wrap">
