@@ -247,7 +247,7 @@ footer{text-align:center;color:#8d789f;font-size:10px;letter-spacing:2px;padding
 (function(){
   try {
     if (new URLSearchParams(location.search).get('intro') === 'done') {
-      sessionStorage.setItem('pxIntroSeen', '1');
+      try { sessionStorage.setItem('pxIntroSeen', '1'); } catch(e) {}
       history.replaceState(null, '', location.pathname);
       return;
     }
