@@ -43,6 +43,118 @@ button:active{transform:scale(.99)}
 .hidden{display:none}
 footer{text-align:center;color:#8d789f;font-size:10px;letter-spacing:2px;padding:14px 0 25px}
 @media(min-width:420px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+/* PYTHON XIT SENZI GAMING BOOSTER */
+#px-boost-dashboard{margin:8px 0 22px}
+#px-boost-dashboard .boost-banner{
+ position:relative;overflow:hidden;padding:19px 15px;border-radius:15px;
+ border:1px solid #9b42e5;
+ background:linear-gradient(135deg,#28103e,#10091b 62%,#35104c);
+ box-shadow:0 0 25px #9d25ff22,inset 0 0 25px #a855f711
+}
+#px-boost-dashboard .boost-kicker{
+ color:#e8a9ff;font-size:10px;font-weight:900;letter-spacing:2px
+}
+#px-boost-dashboard .boost-heading{
+ font-size:25px;line-height:1.05;font-weight:1000;font-style:italic;
+ margin:9px 0;text-shadow:0 0 18px #a855f755
+}
+#px-boost-dashboard .boost-heading span{color:#dc66ff}
+#px-boost-dashboard .boost-copy{font-size:11px;line-height:1.6;color:#c7b3d8}
+#px-boost-dashboard .boost-status{
+ display:inline-flex;margin-top:12px;padding:7px 10px;border-radius:7px;
+ border:1px solid #77409a;background:#170c22;color:#e7c8ff;
+ font-size:10px;font-weight:900;letter-spacing:1px
+}
+#px-boost-dashboard .boost-grid{
+ display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px
+}
+#px-boost-dashboard .boost-card{
+ min-width:0;padding:14px 11px;border-radius:12px;
+ border:1px solid #4e2867;background:linear-gradient(145deg,#1b1027,#0d0813);
+ text-decoration:none;color:#fff;display:flex;flex-direction:column;
+ align-items:flex-start;gap:7px;transition:transform .15s,border-color .15s
+}
+#px-boost-dashboard .boost-card:active{transform:scale(.98)}
+#px-boost-dashboard .boost-card:hover{border-color:#d36aff}
+#px-boost-dashboard .boost-icon{font-size:23px}
+#px-boost-dashboard .boost-card strong{font-size:12px;color:#f1dfff}
+#px-boost-dashboard .boost-card small{font-size:10px;line-height:1.5;color:#b9a5ca}
+#px-boost-dashboard .boost-card em{
+ font-style:normal;font-size:9px;font-weight:900;color:#dc9bff;margin-top:auto
+}
+#px-boost-dashboard .boost-section-title{
+ margin:18px 0 0;font-size:12px;letter-spacing:1px;color:#e7c5ff
+}
+#px-boost-dashboard .boost-check{
+ margin-top:12px;padding:13px;border:1px solid #4e2867;border-radius:11px;
+ background:#100a18
+}
+#px-boost-dashboard .boost-check label{
+ display:flex;align-items:center;gap:9px;font-size:11px;
+ font-weight:700;color:#e5d5f2;margin:11px 0
+}
+#px-boost-dashboard .boost-check input{
+ width:17px;height:17px;flex:0 0 17px;margin:0;accent-color:#b65aff
+}
+#px-boost-dashboard .boost-check p{font-size:10px;line-height:1.6;color:#b9a5ca}
+#px-boost-dashboard .boost-progress{
+ height:5px;border-radius:9px;background:#2a1935;overflow:hidden;margin-top:10px
+}
+#px-boost-dashboard .boost-progress span{
+ display:block;height:100%;width:0;background:linear-gradient(90deg,#8d30d6,#ed8bff);
+ transition:width .2s
+}
+@media(min-width:420px){
+ #px-boost-dashboard .boost-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+
+/* GAMING CONTROL CENTER */
+#px-control-center{margin:14px 0}
+#px-control-center .cc-panel{
+ padding:15px;border:1px solid #633581;border-radius:13px;
+ background:linear-gradient(145deg,#1b1028,#0d0814);
+ box-shadow:0 8px 25px #0004
+}
+#px-control-center .cc-title{
+ margin:0 0 5px;font-size:14px;font-weight:1000;color:#f0d9ff
+}
+#px-control-center .cc-sub{
+ margin:0 0 14px;color:#bba8cb;font-size:10px;line-height:1.6
+}
+#px-control-center .cc-timer{
+ text-align:center;padding:15px 8px;border:1px solid #48265e;
+ border-radius:10px;background:#0b0611
+}
+#px-control-center #px-cc-clock{
+ font-size:35px;font-weight:1000;letter-spacing:2px;color:#e6a2ff;
+ font-variant-numeric:tabular-nums
+}
+#px-control-center .cc-caption{
+ color:#bba8cb;font-size:9px;font-weight:900;letter-spacing:2px
+}
+#px-control-center .cc-actions{display:flex;gap:8px;margin-top:12px}
+#px-control-center .cc-actions button{
+ flex:1;min-width:0;margin:0;padding:8px 5px;min-height:38px;font-size:10px
+}
+#px-control-center .cc-metrics{
+ display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px
+}
+#px-control-center .cc-metric{
+ padding:11px;border:1px solid #48265e;border-radius:9px;background:#0b0611
+}
+#px-control-center .cc-metric label{
+ margin:0 0 7px;font-size:10px
+}
+#px-control-center .cc-metric input{height:38px}
+#px-control-center .cc-result{
+ display:block;margin-top:8px;font-size:10px;font-weight:900;color:#e2a4ff
+}
+#px-control-center .cc-note{
+ margin:12px 0 0;color:#aa96bb;font-size:10px;line-height:1.6
+}
+
 </style>
 
 <style id="px-intro-layout-fix">
@@ -113,6 +225,23 @@ footer{text-align:center;color:#8d789f;font-size:10px;letter-spacing:2px;padding
 #px-smart-features,#diamond-shop,#downloads,#whatsapp-contact{display:none!important}
 </style>
 
+
+<style id="px-cyber-center-upgrade">
+#px-live-system-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}
+#px-live-system-strip .px-live-card{min-width:0;padding:11px 9px;border:1px solid #653482;border-radius:10px;background:linear-gradient(145deg,#21102f,#0b0712);box-shadow:inset 0 0 15px #a855f70b}
+#px-live-system-strip small{display:block;color:#bba8cb;font-size:9px;font-weight:900;letter-spacing:1px}
+#px-live-system-strip strong{display:block;margin-top:6px;color:#e7b5ff;font-size:13px;overflow-wrap:anywhere}
+#px-live-system-strip .px-live-dot{color:#75f0b0}
+#px-live-system-strip .px-live-dot.offline{color:#ff7c9b}
+#px-launch-search{box-sizing:border-box;width:100%;height:44px;margin:0 0 12px;padding:0 13px;border:1px solid #78439a;border-radius:10px;background:#0b0611;color:#fff;font:inherit;outline:none}
+#px-launch-search:focus{border-color:#df91ff;box-shadow:0 0 0 3px #a855f722}
+#px-boost-dashboard .boost-card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+#px-boost-dashboard .boost-card:hover{transform:translateY(-2px);box-shadow:0 0 18px #a855f72b}
+#px-launch-empty{display:none;padding:12px;border:1px dashed #653482;border-radius:10px;color:#bba8cb;font-size:12px}
+@media(max-width:360px){#px-live-system-strip{grid-template-columns:1fr}#px-live-system-strip .px-live-card{padding:9px}}
+@media(prefers-reduced-motion:reduce){#px-boost-dashboard .boost-card{transition:none}}
+</style>
+
 </head>
 <body>
 <div class="wrap">
@@ -127,9 +256,173 @@ aria-expanded="false" aria-controls="site-menu">☰</button>
   <a href="#home">⌂ HOME</a>
   <a href="downloads.html">📁 FILES</a>
   <a href="diamonds.html" rel="noopener">💎 BUY DIAMOND ↗</a>
-</nav>
+<a href="cyber.html">✦ CYBER HUB</a>
+<a href="shop.html">SHOP</a></nav>
+
+
+<section id="px-feature-hub" aria-label="Cyber feature hub">
+<style>
+#px-feature-hub{margin:24px auto;padding:22px;max-width:1100px;
+background:linear-gradient(145deg,#100b20,#090910);
+border:1px solid #713cff;border-radius:20px;color:#f5edff;
+box-shadow:0 0 28px #713cff25;font-family:inherit}
+#px-feature-hub h2{color:#c7a2ff;margin:0 0 8px;font-size:1.5rem}
+#px-feature-hub p{color:#c8bddb;margin:0 0 18px}
+#px-feature-hub .px-hub-grid{display:grid;
+grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px}
+#px-feature-hub a{display:block;padding:16px 10px;text-align:center;
+text-decoration:none;color:#f8f2ff;font-weight:800;
+background:linear-gradient(145deg,#211438,#11101c);
+border:1px solid #54308a;border-radius:12px;
+transition:transform .2s,border-color .2s}
+#px-feature-hub a:hover{transform:translateY(-3px);
+border-color:#c7a2ff;box-shadow:0 0 15px #8b5cf655}
+#px-feature-hub a span{display:block;font-size:25px;margin-bottom:8px}
+</style>
+<h2>✦ PYTHON XIT SENZI // FEATURE HUB</h2>
+<p>Choose your next destination. Explore the tools and sections below.</p>
+<div class="px-hub-grid">
+<a href="shop.html"><span>🛒</span>SHOP</a>
+<a href="community.html"><span>🌐</span>COMMUNITY</a>
+<a href="cyber.html"><span>⚡</span>CYBER CENTER</a>
+<a href="effects.html"><span>✨</span>EFFECTS</a>
+<a href="glitch.html"><span>👾</span>GLITCH</a>
+<a href="intro.html"><span>🎬</span>INTRO</a>
+<a href="rewards.html"><span>🏆</span>REWARDS</a>
+<a href="terminal.html"><span>⌨️</span>TERMINAL</a>
+<a href="vault.html"><span>🔐</span>VAULT</a>
+<a href="diamonds.html"><span>💎</span>BUY DIAMONDS</a>
+<a href="downloads.html"><span>📁</span>DOWNLOADS</a>
+</div>
+</section>
 
 <main id="home">
+
+<section id="px-boost-dashboard" aria-label="Gaming booster dashboard">
+ <div class="boost-banner">
+  <div class="boost-kicker">PYTHON XIT SENZI // GAME SYSTEM</div>
+  <div class="boost-heading">GAMING <span>BOOSTER</span></div>
+  <p class="boost-copy">Your gaming hub. Sensitivity setup, visual effects, gaming utilities and quick access to your tools—all in one place.</p>
+  <div class="boost-status">✦ GAMING HUB READY</div>
+ </div>
+
+
+<section id="px-control-center" aria-label="Gaming Control Center">
+ <div class="cc-panel">
+  <h2 class="cc-title">⚡ GAMING CONTROL CENTER</h2>
+  <p class="cc-sub">Track your session and check FPS or ping readings from your game.</p>
+
+<div id="px-live-system-strip" aria-label="Live browser status">
+ <div class="px-live-card"><small>LOCAL TIME</small><strong id="px-live-clock">--:--:--</strong></div>
+ <div class="px-live-card"><small>CONNECTION</small><strong id="px-live-network">CHECKING</strong></div>
+ <div class="px-live-card"><small>BATTERY</small><strong id="px-live-battery">CHECKING</strong></div>
+</div>
+
+
+  <div class="cc-timer">
+   <div class="cc-caption">SESSION TIMER</div>
+   <div id="px-cc-clock" role="timer">00:00:00</div>
+   <div class="cc-caption" id="px-cc-timer-status">READY WHEN YOU ARE</div>
+  </div>
+  <div class="cc-actions">
+   <button type="button" id="px-cc-start">▶ START</button>
+   <button type="button" id="px-cc-reset">↻ RESET</button>
+  </div>
+
+  <div class="cc-metrics">
+   <div class="cc-metric">
+    <label for="px-cc-fps">FPS READING</label>
+    <input id="px-cc-fps" type="number" min="1" max="1000"
+     inputmode="numeric" placeholder="e.g. 60">
+    <span class="cc-result" id="px-cc-fps-result">Not entered</span>
+   </div>
+   <div class="cc-metric">
+    <label for="px-cc-ping">PING (MS)</label>
+    <input id="px-cc-ping" type="number" min="0" max="10000"
+     inputmode="numeric" placeholder="e.g. 45">
+    <span class="cc-result" id="px-cc-ping-result">Not entered</span>
+   </div>
+  </div>
+  <p class="cc-note">Enter readings shown by your game. These are manual checks, not live measurements from your phone. Actual performance depends on your device, game and network.</p>
+ </div>
+</section>
+
+ <h2 class="boost-section-title">▰ QUICK LAUNCH</h2>
+ 
+<input id="px-launch-search" type="search" placeholder="⌕  Search tools and pages..."
+ aria-label="Search quick launch tools" autocomplete="off">
+<p id="px-launch-empty" role="status">No matching tools. Try another search.</p>
+
+<div class="boost-grid">
+  <a class="boost-card" href="#setup">
+   <span class="boost-icon">🎯</span>
+   <strong>SENSITIVITY LAB</strong>
+   <small>Build a profile for your phone and playing style.</small>
+   <em>OPEN TOOL ↗</em>
+  </a>
+  <a class="boost-card" href="effects.html">
+   <span class="boost-icon">⚡</span>
+   <strong>EFFECTS LAB</strong>
+   <small>Explore visual effects for your gaming hub.</small>
+   <em>OPEN LAB ↗</em>
+  </a>
+  <a class="boost-card" href="glitch.html">
+   <span class="boost-icon">🌀</span>
+   <strong>GLITCH ZONE</strong>
+   <small>Try the Pixel Shift and distortion demos.</small>
+   <em>ENTER ZONE ↗</em>
+  </a>
+  <a class="boost-card" href="terminal.html">
+   <span class="boost-icon">⌘</span>
+   <strong>CYBER TERMINAL</strong>
+   <small>Open the project's terminal-style utility page.</small>
+   <em>OPEN TERMINAL ↗</em>
+  </a>
+  <a class="boost-card" href="downloads.html">
+   <span class="boost-icon">📁</span>
+   <strong>FILE CENTER</strong>
+   <small>Visit your existing downloads page.</small>
+   <em>VIEW FILES ↗</em>
+  </a>
+  <a class="boost-card" href="cyber.html">
+   <span class="boost-icon">💜</span>
+   <strong>CYBER HUB</strong>
+   <small>Explore the other sections of your website.</small>
+   <em>ENTER HUB ↗</em>
+  </a>
+  <a class="boost-card" href="diamonds.html">
+   <span class="boost-icon">💎</span>
+   <strong>DIAMOND SHOP</strong>
+   <small>Open your existing diamond page.</small>
+   <em>OPEN SHOP ↗</em>
+  </a>
+  <a class="boost-card" href="vault.html">
+   <span class="boost-icon">🔐</span>
+   <strong>GAMING VAULT</strong>
+   <small>Visit the vault section of your project.</small>
+   <em>OPEN VAULT ↗</em>
+  </a>
+  <a class="boost-card" href="community.html">
+   <span class="boost-icon">👾</span>
+   <strong>COMMUNITY</strong>
+   <small>Visit your community section.</small>
+   <em>JOIN HUB ↗</em>
+  </a>
+ </div>
+
+ <h2 class="boost-section-title">▰ PRE-MATCH CHECKLIST</h2>
+ <div class="boost-check">
+  <p>Tick the steps you have completed before opening your game.</p>
+  <label><input type="checkbox" class="px-boost-check"> Close apps you do not need</label>
+  <label><input type="checkbox" class="px-boost-check"> Check battery level and device temperature</label>
+  <label><input type="checkbox" class="px-boost-check"> Choose a stable network connection</label>
+  <label><input type="checkbox" class="px-boost-check"> Open and test your sensitivity settings</label>
+  <div class="boost-progress"><span id="px-boost-progress"></span></div>
+  <p id="px-boost-progress-text">0 of 4 checks complete</p>
+ </div>
+ <p class="hint">Note: This dashboard provides shortcuts and a checklist. It does not directly change FPS, RAM, or phone hardware performance.</p>
+</section>
+
 <section class="hero">
 <h1>YOUR DEVICE.<br><span>YOUR SENSITIVITY.</span></h1>
 <p>Enter your phone details and playing setup to generate a personalized starting profile.</p>
@@ -468,6 +761,149 @@ setTimeout(()=>URL.revokeObjectURL(url),1000);
      b.textContent='☰';
    }
  });
+})();
+</script>
+
+
+<script id="px-boost-dashboard-script">
+(function(){
+ const checks=document.querySelectorAll('.px-boost-check');
+ const bar=document.getElementById('px-boost-progress');
+ const label=document.getElementById('px-boost-progress-text');
+ function update(){
+  let done=0;
+  checks.forEach(function(c){if(c.checked)done++;});
+  if(bar)bar.style.width=(done/checks.length*100)+'%';
+  if(label)label.textContent=done+' of '+checks.length+' checks complete';
+ }
+ checks.forEach(function(c){c.addEventListener('change',update);});
+
+ const clock=document.getElementById('px-cc-clock');
+ const timerStatus=document.getElementById('px-cc-timer-status');
+ const startBtn=document.getElementById('px-cc-start');
+ const resetBtn=document.getElementById('px-cc-reset');
+ let elapsed=0, startedAt=0, ticker=null, running=false;
+
+ function drawClock(){
+  const total=elapsed;
+  const h=Math.floor(total/3600);
+  const m=Math.floor((total%3600)/60);
+  const sec=total%60;
+  clock.textContent=[h,m,sec].map(n=>String(n).padStart(2,'0')).join(':');
+ }
+ function stopTimer(){
+  if(ticker!==null){clearInterval(ticker);ticker=null;}
+  if(running){elapsed+=Math.floor((Date.now()-startedAt)/1000);}
+  running=false;
+ }
+ startBtn.addEventListener('click',function(){
+  if(running){
+   stopTimer();
+   drawClock();
+   startBtn.textContent='▶ RESUME';
+   timerStatus.textContent='SESSION PAUSED';
+  }else{
+   startedAt=Date.now();
+   running=true;
+   ticker=setInterval(function(){
+    clock.textContent=(function(){
+     const t=elapsed+Math.floor((Date.now()-startedAt)/1000);
+     return [Math.floor(t/3600),Math.floor((t%3600)/60),t%60]
+      .map(n=>String(n).padStart(2,'0')).join(':');
+    })();
+   },500);
+   startBtn.textContent='Ⅱ PAUSE';
+   timerStatus.textContent='SESSION IN PROGRESS';
+  }
+ });
+ resetBtn.addEventListener('click',function(){
+  stopTimer();elapsed=0;drawClock();
+  startBtn.textContent='▶ START';
+  timerStatus.textContent='READY WHEN YOU ARE';
+ });
+ function updateMetric(inputId,resultId,type){
+  const input=document.getElementById(inputId);
+  const result=document.getElementById(resultId);
+  function render(){
+   if(input.value.trim()===''){result.textContent='Not entered';return;}
+   const n=Number(input.value);
+   if(!Number.isFinite(n)||n<0||input.validity.rangeOverflow||
+      input.validity.rangeUnderflow||(type==='fps'&&n===0)){
+    result.textContent='Enter a valid reading';return;
+   }
+   if(type==='fps'){
+    result.textContent=n>=50?'✓ GOOD READING':n>=30?'◈ PLAYABLE RANGE':'! LOW FPS';
+   }else{
+    result.textContent=n<=60?'✓ LOW PING':n<=120?'◈ MODERATE PING':'! HIGH PING';
+   }
+  }
+  input.addEventListener('input',render);
+ }
+ updateMetric('px-cc-fps','px-cc-fps-result','fps');
+ updateMetric('px-cc-ping','px-cc-ping-result','ping');
+ drawClock();
+
+ update();
+})();
+</script>
+
+
+<script id="px-cyber-center-upgrade-script">
+(function(){
+ 'use strict';
+ const byId=id=>document.getElementById(id);
+ const clock=byId('px-live-clock');
+ const network=byId('px-live-network');
+ const battery=byId('px-live-battery');
+
+ function updateClock(){
+   if(clock) clock.textContent=new Date().toLocaleTimeString([],{
+     hour:'2-digit',minute:'2-digit',second:'2-digit'
+   });
+ }
+ function updateNetwork(){
+   if(!network)return;
+   const online=navigator.onLine;
+   network.textContent=online?'● ONLINE':'● OFFLINE';
+   network.classList.toggle('offline',!online);
+   network.setAttribute('aria-label',online?'Internet connection reported online':'Browser reports offline');
+ }
+ updateClock();
+ setInterval(updateClock,1000);
+ updateNetwork();
+ window.addEventListener('online',updateNetwork);
+ window.addEventListener('offline',updateNetwork);
+
+ if(battery){
+   if(navigator.getBattery){
+     navigator.getBattery().then(function(b){
+       function draw(){
+         battery.textContent=Math.round(b.level*100)+'%'+(b.charging?' ⚡':'');
+       }
+       draw();
+       b.addEventListener('levelchange',draw);
+       b.addEventListener('chargingchange',draw);
+     }).catch(()=>{battery.textContent='UNAVAILABLE';});
+   }else{
+     battery.textContent='NOT SUPPORTED';
+   }
+ }
+
+ const input=byId('px-launch-search');
+ const empty=byId('px-launch-empty');
+ const cards=Array.from(document.querySelectorAll('#px-boost-dashboard .boost-card'));
+ if(input){
+   input.addEventListener('input',function(){
+     const query=input.value.trim().toLowerCase();
+     let visible=0;
+     cards.forEach(function(card){
+       const match=card.textContent.toLowerCase().includes(query);
+       card.hidden=!match;
+       if(match)visible++;
+     });
+     if(empty)empty.style.display=visible?'none':'block';
+   });
+ }
 })();
 </script>
 
