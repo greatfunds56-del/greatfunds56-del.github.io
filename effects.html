@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090610">
+<title>PYTHON XIT SENZI | VISUAL EFFECTS LAB</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#090610;color:#f4edff;font:16px system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+background:radial-gradient(ellipse at top,#381052,transparent 65%)}
+.wrap{width:min(940px,92%);margin:auto}
+header{padding:22px 0;border-bottom:1px solid #43245b}
+.brand{font-weight:900;letter-spacing:2px;color:#d9b2ff}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+nav a,.btn{display:inline-block;padding:10px 12px;border:1px solid #583477;
+border-radius:10px;background:#190e27;color:#f5eaff;text-decoration:none}
+nav a:hover,.btn:hover{background:#54228b}
+h1{font-size:clamp(32px,8vw,55px);line-height:1.05}
+.hero{padding:32px 0}.eyebrow{color:#c28bff;letter-spacing:3px}
+p{color:#cbbfd9;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card{display:block;padding:18px;border:1px solid #432958;border-radius:15px;
+background:linear-gradient(145deg,#1d1229,#100b17);color:#f5eaff;text-decoration:none}
+.card:hover{border-color:#b875ff;box-shadow:0 0 22px #812aff35}
+.icon{font-size:27px}.muted{font-size:13px;color:#ad9cbe}
+footer{margin-top:35px;padding:22px 0;border-top:1px solid #43245b}
+.glitch{animation:glitch 2s infinite}
+@keyframes glitch{0%,90%,100%{text-shadow:2px 0 #ff38c7,-2px 0 #42eaff}
+93%{transform:translateX(3px)}96%{transform:translateX(-3px)}}
+button,input{font:inherit}
+button{cursor:pointer}
+.terminal{background:#050408;border:1px solid #583477;padding:15px;
+border-radius:10px;white-space:pre-wrap;overflow-wrap:anywhere}
+input{width:100%;padding:12px;margin:8px 0;background:#100b17;color:white;
+border:1px solid #583477;border-radius:8px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head>
+<body><header><div class="wrap"><a class="brand" href="index.html">
+◆ PYTHON XIT SENZI</a><nav aria-label="Site navigation"><a href="index.html">HOME</a><a href="cyber.html">CYBER HUB</a><a href="glitch.html">GLITCH FILES</a><a href="terminal.html">TERMINAL</a><a href="vault.html">VAULT</a><a href="sensitivity.html">SENSI</a><a href="community.html">COMMUNITY</a><a href="rewards.html">REWARDS</a><a href="effects.html">EFFECTS</a><a href="downloads.html">FILES</a><a href="diamonds.html">DIAMONDS</a></nav>
+</div></header><main class="wrap"><section class="hero">
+<div class="eyebrow">XIT NETWORK / VISUAL EFFECTS LAB</div><h1>VISUAL EFFECTS LAB</h1>
+<p>Explore the XIT cyber experience. Each feature has its own page.</p>
+</section><div class="grid"><a class="card" href="glitch.html"><div class="icon">✦</div><h2>Glitch Files</h2><p>Open the Glitch Files section.</p></a><a class="card" href="cyber.html"><div class="icon">✦</div><h2>Cyber Hub</h2><p>Open the Cyber Hub section.</p></a><a class="card" href="index.html"><div class="icon">✦</div><h2>Main Website</h2><p>Open the Main Website section.</p></a></div>
+        <div class="card"><h2 id="demo" class="glitch">XIT SENZI // VISUAL TEST</h2>
+        <button class="btn" onclick="document.getElementById('demo').classList.toggle('glitch')">
+        TOGGLE GLITCH</button></div>
+        </main>
+<footer class="wrap"><p>PYTHON XIT SENZI · <a href="privacy.html">Privacy Policy</a>
+· <a href="index.html">Home</a></p></footer></body></html>

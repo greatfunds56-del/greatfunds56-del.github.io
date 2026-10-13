@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090610">
+<title>PYTHON XIT SENZI | GLITCH FILES</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090610;color:#f4edff;font:16px system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at top,#381052,transparent 65%)}
+.wrap{width:min(940px,92%);margin:auto}
+header{padding:22px 0;border-bottom:1px solid #43245b}
+.brand{font-weight:900;letter-spacing:2px;color:#d9b2ff;text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+nav a,.btn{display:inline-block;padding:10px 12px;border:1px solid #583477;border-radius:10px;background:#190e27;color:#f5eaff;text-decoration:none}
+nav a:hover,.btn:hover,.btn.active{background:#54228b;border-color:#c28bff}
+h1{font-size:clamp(32px,8vw,55px);line-height:1.05}
+.hero{padding:30px 0 18px}
+.eyebrow{color:#c28bff;letter-spacing:3px;font-size:12px}
+p{color:#cbbfd9;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{padding:18px;border:1px solid #432958;border-radius:15px;background:linear-gradient(145deg,#1d1229,#100b17);min-width:0}
+.icon{font-size:27px}
+.muted{font-size:13px;color:#ad9cbe}
+.preview{margin:18px 0;padding:25px 12px;min-height:190px;display:grid;place-items:center;text-align:center;background:repeating-linear-gradient(0deg,#100b17 0px,#100b17 3px,#1b1026 4px);border:1px solid #7945a5;border-radius:14px;overflow:hidden;position:relative}
+.preview:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 4px,#c28bff12 5px 6px)}
+.logo{font-size:clamp(24px,6vw,43px);font-weight:1000;letter-spacing:3px;color:#ead7ff;overflow-wrap:anywhere}
+.preview.pixel .logo{text-shadow:calc(var(--power)*1px) 0 #ff38c7,calc(var(--power)*-1px) 0 #42eaff}
+.preview.distort .logo{animation:jitter .22s steps(2,end) infinite;text-shadow:3px 0 #ff38c7,-3px 0 #42eaff}
+.preview.pixel.distort .logo{filter:hue-rotate(55deg)}
+@keyframes jitter{0%{transform:translate(0)}25%{transform:translate(2px,-1px)}50%{transform:translate(-2px,1px)}75%{transform:translate(1px,2px)}100%{transform:translate(0)}}
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+button{font:inherit;cursor:pointer}
+.btn{font-size:14px}
+input[type=range]{width:100%;accent-color:#bd75ff}
+.status{color:#d9b2ff;font-size:13px;margin-top:12px}
+footer{margin-top:35px;padding:22px 0;border-top:1px solid #43245b}
+@media(prefers-reduced-motion:reduce){.preview.distort .logo{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="index.html">◆ PYTHON XIT SENZI</a>
+<nav aria-label="Site navigation">
+<a href="index.html">HOME</a><a href="cyber.html">CYBER HUB</a>
+<a href="glitch.html">GLITCH FILES</a><a href="terminal.html">TERMINAL</a>
+<a href="vault.html">VAULT</a><a href="sensitivity.html">SENSI</a>
+<a href="community.html">COMMUNITY</a><a href="rewards.html">REWARDS</a>
+<a href="effects.html">EFFECTS</a><a href="downloads.html">FILES</a>
+<a href="diamonds.html">DIAMONDS</a>
+</nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow">XIT NETWORK / VISUAL EXPERIMENTS</div>
+<h1 class="glitch">GLITCH FILES<span style="color:#bd75ff">_</span></h1>
+<p>Activate the effects. Adjust the intensity. Build your own purple cyber look.</p>
+</section>
+
+<section class="card">
+<div class="eyebrow">LIVE PREVIEW</div>
+<div id="preview" class="preview">
+<div><div class="logo">PYTHON XIT</div><p>GLITCH SYSTEM ONLINE</p></div>
+</div>
+<div class="controls">
+<button class="btn" id="pixelBtn" type="button" aria-pressed="false">✦ Pixel Shift: OFF</button>
+<button class="btn" id="distortBtn" type="button" aria-pressed="false">⚡ Distortion: OFF</button>
+<button class="btn" id="resetBtn" type="button">↻ Reset Effects</button>
+</div>
+<label for="power">Effect intensity: <strong id="powerLabel">5</strong></label>
+<input id="power" type="range" min="1" max="12" value="5">
+<div class="status" id="status" aria-live="polite">SYSTEM READY — select an effect above.</div>
+</section>
+
+<div class="grid" style="margin-top:15px">
+<section class="card"><div class="icon">✦</div><h2>Pixel Shift</h2><p>Split the text with neon pink and cyan offsets. Use the intensity slider to adjust the shift.</p></section>
+<section class="card"><div class="icon">⚡</div><h2>Digital Distortion</h2><p>Switch on animated digital jitter for a rugged cyber-terminal look.</p></section>
+<section class="card"><div class="icon">▤</div><h2>Scanline Style</h2><p>The preview uses horizontal scanlines for a retro digital display effect.</p><a class="btn" href="effects.html">Open Effects Lab →</a></section>
+</div>
+</main>
+
+<footer class="wrap"><p>PYTHON XIT SENZI · <a href="privacy.html">Privacy Policy</a> · <a href="index.html">Home</a></p></footer>
+
+<script>
+const preview=document.getElementById('preview');
+const pixelBtn=document.getElementById('pixelBtn');
+const distortBtn=document.getElementById('distortBtn');
+const power=document.getElementById('power');
+const powerLabel=document.getElementById('powerLabel');
+const status=document.getElementById('status');
+let pixel=false,distort=false;
+function render(){
+ preview.classList.toggle('pixel',pixel);
+ preview.classList.toggle('distort',distort);
+ preview.style.setProperty('--power',power.value);
+ pixelBtn.classList.toggle('active',pixel);
+ distortBtn.classList.toggle('active',distort);
+ pixelBtn.setAttribute('aria-pressed',String(pixel));
+ distortBtn.setAttribute('aria-pressed',String(distort));
+ pixelBtn.textContent='✦ Pixel Shift: '+(pixel?'ON':'OFF');
+ distortBtn.textContent='⚡ Distortion: '+(distort?'ON':'OFF');
+ powerLabel.textContent=power.value;
+ status.textContent=pixel||distort?'EFFECTS ACTIVE — '+[pixel?'PIXEL SHIFT':'',distort?'DIGITAL DISTORTION':''].filter(Boolean).join(' + '):'SYSTEM READY — select an effect above.';
+}
+pixelBtn.addEventListener('click',()=>{pixel=!pixel;render()});
+distortBtn.addEventListener('click',()=>{distort=!distort;render()});
+power.addEventListener('input',render);
+document.getElementById('resetBtn').addEventListener('click',()=>{pixel=false;distort=false;power.value=5;render()});
+render();
+</script>
+</body>
+</html>

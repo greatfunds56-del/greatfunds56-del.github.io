@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10051f">
+<title>XIT SENZI | Cyber Shop</title>
+<style>
+:root{color-scheme:dark;--bg:#10051f;--panel:#1b0c2b;--purple:#b45cff;--pink:#ff45d4;--text:#f8efff;--muted:#c7b3d9}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#351052,var(--bg) 65%);color:var(--text);font:16px system-ui,sans-serif;min-height:100vh}
+header{padding:18px 5%;border-bottom:1px solid #b45cff55;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:1px;color:#fff;text-decoration:none}
+nav a,.btn{color:white;text-decoration:none;border:1px solid #b45cff88;border-radius:12px;padding:11px 15px;display:inline-block}
+nav a:hover,.btn:hover{background:#55227a}
+main{max-width:1100px;margin:auto;padding:30px 18px}
+.hero,.panel{background:#1b0c2bdd;border:1px solid #b45cff55;border-radius:20px;padding:24px;margin-bottom:20px;box-shadow:0 10px 35px #0005}
+.tag{color:#dfadff;font-size:12px;letter-spacing:3px;font-weight:800}
+h1{font-size:clamp(30px,6vw,52px);line-height:1.05;margin:12px 0}
+h2{margin-top:0}
+p{color:var(--muted);line-height:1.7}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.primary{background:linear-gradient(110deg,#822cff,#db36c8);border:0;font-weight:800}
+.framebox{height:75vh;min-height:500px;border:1px solid #b45cff77;border-radius:15px;overflow:hidden;background:#fff}
+iframe{width:100%;height:100%;border:0;background:white}
+.note{font-size:13px}
+footer{text-align:center;padding:25px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="index.html">◆ PYTHON XIT SENZI</a>
+<nav><a href="index.html">HOME</a></nav>
+</header>
+<main>
+<section class="hero">
+<div class="tag">XIT NETWORK / MARKETPLACE</div>
+<h1>CYBER <span style="color:#c879ff">SHOP</span></h1>
+<p>Explore the partner store and shop available products. Checkout and payment are handled by the store unless an approved reseller checkout is configured.</p>
+<div class="actions">
+<a class="btn primary" href="https://namznewera.my.id/" target="_blank" rel="noopener noreferrer">OPEN STORE ↗</a>
+<a class="btn" href="#partner-store">VIEW STORE BELOW ↓</a>
+</div>
+</section>
+
+<section class="panel">
+<h2>🛒 Partner Store</h2>
+<p>If the seller permits embedding, the store will appear below. If the frame is blocked or stays blank, use the Open Store button to shop securely on the seller's website.</p>
+<div class="framebox" id="partner-store">
+<iframe src="https://namznewera.my.id/"
+title="NAMZ NEWERA partner store"
+loading="lazy"
+referrerpolicy="strict-origin-when-cross-origin"
+allow="payment">
+</iframe>
+</div>
+<div class="actions">
+<a class="btn primary" href="https://namznewera.my.id/" target="_blank" rel="noopener noreferrer">OPEN CHECKOUT ON STORE ↗</a>
+</div>
+</section>
+
+<section class="panel">
+<h2>💜 Reseller & Affiliate</h2>
+<p><strong>Reseller:</strong> Contact the seller through its official website and obtain reseller approval, your reseller prices, and its order/payment instructions before accepting customers' money.</p>
+<div class="actions">
+<a class="btn" href="https://namznewera.my.id/" target="_blank" rel="noopener noreferrer">VISIT SELLER / RESELLER INFO ↗</a>
+</div>
+<p><strong>Affiliate:</strong> Add your unique tracking link after the seller approves your affiliate account. The ordinary store link above is not confirmed to track referrals or pay commission.</p>
+<p class="note">Don't collect card details or passwords on this website. Use the seller's official checkout or an authorized payment provider.</p>
+</section>
+</main>
+<footer>PYTHON XIT SENZI · PARTNER SHOP</footer>
+</body>
+</html>
