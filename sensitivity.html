@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PYTHON XIT SENZI | Sensitivity</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#08040e;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 16px;text-align:center;background:linear-gradient(135deg,#180526,#350052);border-bottom:2px solid #a000ff}
+header h1{margin:0;color:#d65cff;font-size:25px;font-weight:900;letter-spacing:1px}
+header p{color:#c9a5df;font-size:12px}
+main{max-width:520px;margin:22px auto;padding:0 15px}
+.panel{background:linear-gradient(145deg,#190d22,#0e0913);border:1px solid #64208b;border-radius:15px;padding:19px;margin-bottom:16px;box-shadow:0 0 18px #7200aa22}
+h2{font-size:19px;color:#dc76ff;margin:0 0 8px}
+.note{color:#b9a9c4;font-size:12px;line-height:1.6}
+label{display:block;margin:18px 0 8px;font-size:14px;font-weight:bold}
+.value{float:right;color:#e18aff}
+input[type=range]{width:100%;accent-color:#bc36ff}
+select{width:100%;padding:12px;background:#120a19;color:white;border:1px solid #7833a0;border-radius:8px}
+button,.btn{display:block;width:100%;padding:13px;border:0;border-radius:9px;background:linear-gradient(90deg,#7900bd,#c12aff);color:#fff;font-weight:bold;text-align:center;text-decoration:none;margin-top:12px;font-size:14px}
+.secondary{background:#24132f;border:1px solid #77359b}
+.result{white-space:pre-line;color:#e9d7f5;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+footer{text-align:center;padding:25px;color:#806b8c;font-size:11px}
+</style>
+</head>
+<body>
+<header>
+<h1>PYTHON XIT SENZI</h1>
+<p>⚡ CUSTOM SENSITIVITY LAB ⚡</p>
+</header>
+<main>
+<section class="panel">
+<h2>DEVICE SETUP</h2>
+<p class="note">Choose your setup to prepare your personal sensitivity profile.</p>
+<label for="phone">Phone brand</label>
+<select id="phone">
+<option>Samsung</option><option>TECNO</option><option>Infinix</option>
+<option>Redmi / Xiaomi</option><option>iPhone</option><option>OPPO</option>
+<option>Vivo</option><option>Other</option>
+</select>
+<label for="ram">RAM</label>
+<select id="ram">
+<option>2 GB</option><option>3 GB</option><option selected>4 GB</option>
+<option>6 GB</option><option>8 GB</option><option>12 GB or more</option>
+</select>
+<label for="fingers">Finger setup</label>
+<select id="fingers">
+<option>2 fingers</option><option selected>3 fingers</option>
+<option>4 fingers</option><option>5 fingers</option><option>6 fingers</option>
+</select>
+<label for="style">Playing style</label>
+<select id="style">
+<option value="balanced">Balanced</option>
+<option value="rush">Rusher / Aggressive</option>
+<option value="precise">Precision / Long range</option>
+</select>
+</section>
+
+<section class="panel">
+<h2>SENSITIVITY CONTROL</h2>
+<p class="note">Adjust each value from 0 to 200. These are starting suggestions; fine-tune them in your game.</p>
+<div id="sliders"></div>
+<button onclick="generate()">⚡ GENERATE MY SETTINGS</button>
+<button class="secondary" onclick="resetSettings()">RESET SETTINGS</button>
+</section>
+
+<section class="panel">
+<h2>YOUR CONFIGURATION</h2>
+<div id="result" class="result">Your custom settings go show here after you press Generate.</div>
+<button onclick="copySettings()">COPY SETTINGS</button>
+<button class="secondary" onclick="saveSettings()">DOWNLOAD SETTINGS (.TXT)</button>
+</section>
+<a class="btn secondary" href="index.html">← BACK TO HOME</a>
+<a class="btn secondary" href="downloads.html">OPEN DOWNLOADS →</a>
+</main>
+<footer>PYTHON XIT SENZI · CUSTOM GAME SETTINGS</footer>
+<script>
+const names=[
+["General",190],["Red Dot",180],["2x Scope",170],
+["4x Scope",155],["Sniper Scope",90],["Free Look",150]
+];
+const presets={
+balanced:[190,180,170,155,90,150],
+rush:[200,195,185,170,100,180],
+precise:[175,160,150,140,80,130]
+};
+const sliders=document.getElementById("sliders");
+names.forEach((item,i)=>{
+sliders.insertAdjacentHTML("beforeend",
+'<label for="s'+i+'">'+item[0]+' <span class="value" id="v'+i+'">'+item[1]+'</span></label>'+
+'<input id="s'+i+'" type="range" min="0" max="200" value="'+item[1]+'" oninput="document.getElementById(\'v'+i+'\').textContent=this.value">');
+});
+function generate(){
+const values=names.map((n,i)=>document.getElementById("s"+i).value);
+const text="PYTHON XIT SENZI — CUSTOM SETTINGS\n\n"+
+"Phone: "+document.getElementById("phone").value+"\n"+
+"RAM: "+document.getElementById("ram").value+"\n"+
+"Fingers: "+document.getElementById("fingers").value+"\n"+
+"Style: "+document.getElementById("style").selectedOptions[0].text+"\n\n"+
+names.map((n,i)=>n[0]+": "+values[i]).join("\n")+
+"\n\nThese are suggested starting values. Adjust in-game to suit your device.";
+document.getElementById("result").textContent=text;
+}
+function resetSettings(){
+names.forEach((n,i)=>{
+document.getElementById("s"+i).value=n[1];
+document.getElementById("v"+i).textContent=n[1];
+});
+document.getElementById("style").value="balanced";
+generate();
+}
+async function copySettings(){
+generate();
+const text=document.getElementById("result").textContent;
+try{await navigator.clipboard.writeText(text);alert("Settings copied!");}
+catch(e){alert("Copy not available in this browser. Use Download Settings instead.");}
+}
+function saveSettings(){
+generate();
+const blob=new Blob([document.getElementById("result").textContent],{type:"text/plain"});
+const url=URL.createObjectURL(blob);
+const a=document.createElement("a");
+a.href=url;a.download="python-xit-senzi-settings.txt";a.click();
+URL.revokeObjectURL(url);
+}
+document.getElementById("style").addEventListener("change",function(){
+const values=presets[this.value];
+values.forEach((v,i)=>{
+document.getElementById("s"+i).value=v;
+document.getElementById("v"+i).textContent=v;
+});
+});
+generate();
+</script>
+</body>
+</html>
+

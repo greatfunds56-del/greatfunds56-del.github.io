@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090510">
+<title>PYTHON XIT SENZI</title>
+<style>
+:root{--bg:#090510;--card:#140c20;--purple:#a855f7;--pink:#dc66ff;--line:#542477;--muted:#b7a7c7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#241036 0,#090510 48%);color:#f8f1ff;font-family:system-ui,Arial,sans-serif;font-size:14px}
+.wrap{width:min(100% - 24px,520px);margin:auto}
+header{text-align:center;padding:25px 0 17px}
+.logo{font-size:clamp(25px,7vw,37px);font-weight:1000;line-height:1.05;letter-spacing:-1.5px;font-style:italic;text-shadow:0 0 20px #9d25ff77}
+.logo span{color:var(--pink)}
+.tag{font-size:10px;letter-spacing:2px;color:#c9b0e7;margin-top:8px}
+nav{display:flex;justify-content:center;gap:9px;padding:11px 0;border-top:1px solid #48205f;border-bottom:1px solid #48205f}
+nav a{color:#e9d7ff;text-decoration:none;font-size:11px;font-weight:800;padding:7px 10px;border-radius:7px}
+nav a:hover{background:#321448}
+.hero{text-align:center;padding:24px 0 17px}
+.hero h1{font-size:22px;line-height:1.2;margin:0 0 8px;font-weight:900}
+.hero h1 span{color:var(--pink)}
+.hero p{color:var(--muted);font-size:12px;line-height:1.6;margin:0 auto;max-width:360px}
+.panel{background:linear-gradient(145deg,#1a1025,#100a18);border:1px solid var(--line);border-radius:13px;padding:16px;margin-bottom:13px;box-shadow:0 8px 28px #0005}
+.section-title{font-size:13px;font-weight:900;letter-spacing:1px;margin:0 0 14px;color:#e9c6ff}
+label{display:block;font-size:11px;font-weight:800;color:#d9b9f7;margin:12px 0 6px}
+input,select{width:100%;height:42px;padding:0 11px;background:#0c0712;color:#fff;border:1px solid #593276;border-radius:8px;font:inherit;outline:none}
+input:focus,select:focus{border-color:var(--pink);box-shadow:0 0 0 2px #a855f722}
+button{width:100%;min-height:44px;border:0;border-radius:8px;background:linear-gradient(100deg,#7b20c8,#c44bfa);color:white;font-weight:900;font-size:13px;margin-top:15px;cursor:pointer;box-shadow:0 5px 18px #a020e633}
+button:active{transform:scale(.99)}
+.small-btn{width:auto;min-height:35px;margin:0;padding:0 12px;font-size:11px}
+.hint{color:var(--muted);font-size:11px;line-height:1.5;margin:10px 0 0}
+.results-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.results-head h2{font-size:14px;margin:0;color:#f1dfff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.stat{background:#0c0713;border:1px solid #47235f;border-radius:9px;padding:12px}
+.stat span{display:block;color:#c9a6ec;font-size:11px;font-weight:800}
+.stat strong{display:block;font-size:25px;color:#e5a4ff;margin-top:5px}
+.stat input{height:35px;font-size:17px;font-weight:800;color:#e5a4ff;margin-top:7px;padding:0 8px}
+.empty{color:var(--muted);font-size:12px;line-height:1.6}
+.hidden{display:none}
+footer{text-align:center;color:#8d789f;font-size:10px;letter-spacing:2px;padding:14px 0 25px}
+@media(min-width:420px){.grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+
+<style id="px-intro-layout-fix">
+#px-intro{
+ position:fixed!important;inset:0!important;
+ width:100%!important;height:100vh!important;height:100dvh!important;
+ padding:0!important;margin:0!important;overflow:hidden!important;
+ background:#05020a!important;
+}
+#px-intro video{
+ position:absolute!important;inset:0!important;
+ width:100%!important;height:100%!important;
+ object-fit:contain!important;background:#05020a!important;
+}
+#px-intro:after{pointer-events:none!important;
+ background:linear-gradient(180deg,#08041018,#08041008 55%,#08041045)!important}
+#px-intro .px-content{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ box-sizing:border-box!important;padding:20px!important;
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ pointer-events:none!important;
+}
+#px-intro .px-tag,#px-intro h1,#px-intro .px-content p{
+ pointer-events:none!important;text-shadow:0 2px 12px #000,0 0 16px #9d4edd!important;
+}
+#px-intro h1{font-size:clamp(27px,7vw,48px)!important;margin:12px 0!important}
+#px-enter,#px-sound{
+ pointer-events:auto!important;color:white!important;
+ background:rgba(35,12,54,.28)!important;
+ border:1px solid rgba(235,190,255,.58)!important;
+ backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;
+ box-shadow:0 4px 24px #0005!important;border-radius:14px!important;
+}
+#px-enter{padding:14px 24px!important;font-size:14px!important}
+#px-sound{
+ position:absolute!important;left:50%!important;
+ bottom:calc(18px + env(safe-area-inset-bottom))!important;
+ transform:translateX(-50%)!important;margin:0!important;
+ padding:10px 16px!important;white-space:nowrap!important;font-size:12px!important;
+}
+</style>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7182313844538981" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="logo">PYTHON XIT <span>SENZI</span></div>
+<div class="tag">DEVICE-BASED SENSITIVITY</div>
+</header>
+<nav>
+<a href="#home">⌂ HOME</a>
+<a href="#setup">⚙ SENSI</a>
+<a href="#results">✦ RESULTS</a>
+</nav>
+<main id="home">
+<section class="hero">
+<h1>YOUR DEVICE.<br><span>YOUR SENSITIVITY.</span></h1>
+<p>Enter your phone details and playing setup to generate a personalized starting profile.</p>
+</section>
+<section class="panel" id="setup">
+<h2 class="section-title">✦ DEVICE CONFIGURATION</h2>
+<form id="form">
+<label for="brand">PHONE BRAND</label>
+<select id="brand" required>
+<option value="">Select brand</option>
+<option>Samsung</option><option>TECNO</option><option>Infinix</option>
+<option>Redmi</option><option>Xiaomi</option><option>itel</option>
+<option>iPhone</option><option>OPPO</option><option>vivo</option>
+<option>Realme</option><option>Huawei</option><option>Other</option>
+</select>
+<label for="model">PHONE MODEL</label>
+<input id="model" placeholder="e.g. TECNO Spark 10" maxlength="60" required>
+<label for="ram">RAM SIZE</label>
+<select id="ram" required>
+<option value="">Choose RAM</option>
+<option value="2">2 GB</option><option value="3">3 GB</option>
+<option value="4">4 GB</option><option value="6">6 GB</option>
+<option value="8">8 GB</option><option value="12">12 GB</option>
+<option value="16">16 GB or more</option>
+</select>
+<label for="fingers">NUMBER OF FINGERS</label>
+<select id="fingers" required>
+<option value="">Choose finger setup</option>
+<option value="2">2 fingers</option><option value="3">3 fingers</option>
+<option value="4">4 fingers</option><option value="5">5 fingers</option>
+<option value="6">6 fingers</option>
+</select>
+<label for="style">PLAYING STYLE</label>
+<select id="style">
+<option value="balanced">Balanced</option>
+<option value="rush">Rusher / Fast drag</option>
+<option value="precision">Precision / Long range</option>
+</select>
+<button type="submit">⚡ GENERATE MY SENSITIVITY</button>
+<p class="hint">Settings are suggested starting values. Actual feel depends on your game, FPS, screen and personal control.</p>
+</form>
+</section>
+<section class="panel" id="results">
+<div class="results-head">
+<h2>✦ YOUR SENSITIVITY</h2>
+<button class="small-btn" type="button" id="reset">RESET</button>
+</div>
+<p id="empty" class="empty">Your personalized settings go show here after you submit your device details.</p>
+<div id="output" class="hidden">
+<div class="grid" id="grid"></div>
+<button type="button" id="copy">COPY SETTINGS</button>
+<button type="button" id="download">SAVE AS TXT</button>
+<p class="hint" id="summary"></p>
+</div>
+</section>
+</main>
+<footer>PYTHON XIT SENZI<br><br>PLAY SMART • AIM BETTER</footer>
+</div>
+<script>
+const form=document.getElementById('form');
+const fields=['General','Red Dot','2x Scope','4x Scope','Sniper Scope','Free Look'];
+let current=null;
+function generate(e){
+if(e)e.preventDefault();
+if(!form.reportValidity())return;
+const brand=document.getElementById("brand").value.trim();
+const model=document.getElementById("model").value.trim();
+const ram=Number(document.getElementById("ram").value);
+const fingers=Number(document.getElementById("fingers").value);
+const style=document.getElementById("style").value;
+if(!model){document.getElementById("model").focus();return;}
+const key=(brand+" "+model).toLowerCase().replace(/[^a-z0-9]/g,"");
+let hash=2166136261;
+for(let i=0;i<key.length;i++)hash=Math.imul(hash^key.charCodeAt(i),16777619)>>>0;
+const brandKey=brand.toLowerCase();
+let brandOffset=brandKey.includes("iphone")||brandKey.includes("apple")?3:brandKey.includes("samsung")?2:brandKey.includes("tecno")?-1:brandKey.includes("infinix")?1:brandKey.includes("xiaomi")||brandKey.includes("redmi")||brandKey.includes("poco")?2:brandKey.includes("itel")?-3:brandKey.includes("oppo")||brandKey.includes("vivo")||brandKey.includes("realme")?1:0;
+let base=(ram<=3?172:ram<=4?180:ram<=6?187:ram<=8?192:196)+brandOffset+(hash%19)-9;
+base+=fingers===2?-8:fingers===3?-3:fingers===4?2:fingers===5?4:5;
+if(style==="rush")base+=7;
+if(style==="precision")base-=9;
+const tweaks=[];let seed=hash;
+for(let i=0;i<6;i++){seed=(Math.imul(seed^(i+1),2246822519)+3266489917)>>>0;tweaks.push(seed%9-4);}
+const vals=[base+tweaks[0],base-5+tweaks[1],base-16+tweaks[2],base-31+tweaks[3],base-(style==="precision"?83:76)+tweaks[4],base-24+tweaks[5]].map(v=>Math.max(0,Math.min(200,Math.round(v))));
+current={brand,model,ram,fingers,style,fields,vals};
+document.getElementById("empty").classList.add("hidden");
+document.getElementById("output").classList.remove("hidden");
+document.getElementById("grid").innerHTML=fields.map((name,i)=>`<div class="stat"><span>${name.toUpperCase()}</span><input aria-label="${name}" type="number" min="0" max="200" value="${vals[i]}" data-index="${i}"></div>`).join("");
+document.getElementById("summary").textContent=brand+" "+model+" • "+ram+" GB RAM • "+fingers+" fingers • "+document.getElementById("style").selectedOptions[0].text;
+}
+function getText(){
+if(!current)return '';
+const vals=[...document.querySelectorAll('#grid input')].map(i=>i.value);
+return 'PYTHON XIT SENZI - SENSITIVITY PROFILE\nPhone: '+current.brand+' '+current.model+'\nRAM: '+current.ram+' GB\nFingers: '+current.fingers+'\nStyle: '+current.style+'\n\n'+fields.map((f,i)=>f+': '+vals[i]).join('\n')+'\n\nSuggested starting values. Adjust after testing in-game.';
+}
+form.addEventListener('submit',generate);
+document.getElementById('reset').addEventListener('click',()=>{
+form.reset();current=null;
+document.getElementById('output').classList.add('hidden');
+document.getElementById('empty').classList.remove('hidden');
+});
+document.getElementById('copy').addEventListener('click',async()=>{
+try{await navigator.clipboard.writeText(getText());alert('Settings copied!')}
+catch(e){prompt('Copy your settings below:',getText())}
+});
+document.getElementById('download').addEventListener('click',()=>{
+const blob=new Blob([getText()],{type:'text/plain'});
+const url=URL.createObjectURL(blob);const a=document.createElement('a');
+a.href=url;a.download='python-xit-senzi-settings.txt';a.click();
+setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+</script>
+
+<section id="downloads" style="margin:28px 0;padding:18px;border:1px solid #542477;border-radius:16px;background:linear-gradient(145deg,#1b1029,#0d0815);box-shadow:0 0 22px #a855f722">
+  <h2 style="margin:0 0 8px;color:#dc66ff;font-size:22px">DOWNLOADS</h2>
+  <p style="color:#b7a7c7;margin:0 0 16px">Get your headshot files below.</p>
+  <div style="padding:14px;margin:10px 0;border:1px solid #542477;border-radius:12px">
+    <strong>90% DRAG HS BY PRIME XIT</strong>
+    <p style="color:#b7a7c7">Drag headshot file</p>
+    <a href="https://www.mediafire.com/file/6zhh1qnwr5n7rqg/90%2525DRAG_HS_BY_PRIME_XIT.zip/file?dkey=6zhh1qnwr5n7rqg" target="_blank" rel="noopener noreferrer">⬇ DOWNLOAD FILE</a>
+  </div>
+  <div style="padding:14px;margin:10px 0;border:1px solid #542477;border-radius:12px">
+    <strong>DRAGSET HS TRANSCENDANT V1</strong>
+    <p style="color:#b7a7c7">Premium headshot file</p>
+    <a href="https://www.mediafire.com/file/ujofv1nf3epvsyn/DRAGSET+HS+TRANSCENDANT+V1+" target="_blank" rel="noopener noreferrer">⬇ DOWNLOAD FILE</a>
+  </div>
+</section>
+
+
+<section id="whatsapp-contact" style="margin:20px 0;padding:22px 16px;text-align:center;background:linear-gradient(145deg,#1b1029,#0d0815);border:1px solid #a855f7;border-radius:16px;box-shadow:0 0 20px #a855f733;color:white">
+  <h2 style="color:#dc66ff;margin:0 0 10px">NEED THE FILE PASSWORD?</h2>
+  <p style="color:#d5c6e3">DM me on WhatsApp for the password of the file.</p>
+  <a href="https://wa.me/2347037191671?text=Hello%2C%20I%20need%20the%20password%20for%20your%20file" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:14px;border-radius:10px;text-decoration:none;font-weight:bold">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0C5.55 0 .22 5.32.22 11.87c0 2.1.55 4.15 1.6 5.96L.12 24l6.33-1.66a11.9 11.9 0 0 0 5.65 1.44h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.24-6.15-3.47-8.42ZM12.1 21.77a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.76.99 1-3.66-.24-.38a9.82 9.82 0 0 1-1.51-5.26c0-5.46 4.45-9.91 9.92-9.91a9.85 9.85 0 0 1 7.02 2.91 9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.92-9.93 9.92Z"/></svg>
+    CHAT WITH ME ON WHATSAPP
+  </a>
+  <p style="color:#25D366;font-weight:bold;margin-bottom:0">07037191671</p>
+</section>
+\n
+<!-- PYTHON XIT INTRO START -->
+<style>
+#px-intro{position:fixed;inset:0;z-index:999999;background:#080410;color:white;display:flex;align-items:center;justify-content:center;overflow:hidden;font-family:system-ui,sans-serif}
+#px-intro video{position:absolute;width:100%;height:100%;inset:0;object-fit:contain;background:#000}
+#px-intro:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#09031388,#10051dcc 75%,#080410f5)}
+#px-intro .px-content{position:relative;z-index:2;text-align:center;padding:24px;width:min(92%,560px)}
+#px-intro .px-tag{color:#e879f9;letter-spacing:5px;font-size:12px;font-weight:900}
+#px-intro h1{font-size:clamp(30px,8vw,54px);line-height:1.05;margin:18px 0 12px;font-weight:1000;text-shadow:0 0 14px #c026d3,0 0 35px #7e22ce}
+#px-intro p{color:#e9d5ff;margin:0 0 28px;letter-spacing:2px}
+#px-enter{border:1px solid #f0abfc;border-radius:12px;padding:15px 30px;background:linear-gradient(100deg,#6b21a8,#c026d3);color:white;font-weight:1000;letter-spacing:2px;font-size:15px;box-shadow:0 0 18px #c026d388;cursor:pointer}
+#px-enter:active{transform:scale(.97)}
+#px-sound{display:block;margin:0 auto 18px;padding:10px 16px;border:1px solid #d946ef;border-radius:10px;background:#190b29;color:white;font-weight:800;cursor:pointer}
+#px-intro.px-hide{opacity:0;visibility:hidden;transition:opacity .65s,visibility .65s;pointer-events:none}
+@media(prefers-reduced-motion:reduce){#px-intro.px-hide{transition:none}}
+</style>
+<div id="px-intro">
+  <video autoplay muted playsinline preload="auto" id="px-intro-video">
+    <source src="intro.mp4" type="video/mp4">
+  </video>
+  <div class="px-content">
+    <button id="px-sound" type="button">🔊 TAP TO ENABLE SOUND</button>
+    <div class="px-tag">WELCOME TO</div>
+    <h1>PYTHON XIT SENZI</h1>
+    <p>YOUR SENSITIVITY • YOUR GAME</p>
+    <button id="px-enter" type="button">⚡ ENTER WEBSITE ⚡</button>
+  </div>
+</div>
+<script>
+(function(){
+  var intro=document.getElementById('px-intro');
+  var enter=document.getElementById('px-enter');
+  var video=document.getElementById('px-intro-video');
+  var sound=document.getElementById('px-sound');
+  if(sound && video){sound.addEventListener('click',function(){video.muted=false;video.volume=1;video.play().then(function(){sound.textContent='🔊 SOUND ON';}).catch(function(){sound.textContent='TAP AGAIN TO PLAY SOUND';});});}
+  if(enter && intro){
+    enter.addEventListener('click',function(){
+      intro.classList.add('px-hide');
+      window.setTimeout(function(){intro.remove();},700);
+    });
+  }
+})();
+</script>
+<!-- PYTHON XIT INTRO END -->
+
+</body>
+</html>
